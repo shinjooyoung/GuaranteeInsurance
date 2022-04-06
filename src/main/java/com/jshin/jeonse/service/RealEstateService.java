@@ -16,7 +16,7 @@ public class RealEstateService {
 
     @Transactional(rollbackFor = Exception.class)
     public void save(RealEstateDto houseDto) {
-        realEstateRepository.save(houseDt.toEntity());
+        realEstateRepository.save(houseDto.toEntity());
     }
 
     @Transactional(rollbackFor = Exception.class)

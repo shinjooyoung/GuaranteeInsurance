@@ -19,10 +19,4 @@ class RealEstateRepositoryTest {
     HouseRepository houseRepository;
 
 
-
-
-    @Test
-    void save() {
-        houseRepository
-    }
 }
