@@ -1,4 +1,4 @@
-package jeonse;
+package com.jshin.jeonse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
