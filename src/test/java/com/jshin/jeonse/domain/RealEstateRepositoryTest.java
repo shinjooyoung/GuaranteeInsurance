@@ -50,7 +50,7 @@ class RealEstateRepositoryTest {
         RealEstate realEstate = RealEstate.builder()
                 .numberName("dfd")
                 .roadName("dfd")
-                .buildingCode(123)
+                .buildingCode("123")
                 .deposit(123)
                 .house(house)
                 .build();

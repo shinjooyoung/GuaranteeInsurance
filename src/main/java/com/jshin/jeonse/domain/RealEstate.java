@@ -21,7 +21,7 @@ public class RealEstate {
 
     private String roadName;
 
-    private int buildingCode;
+    private String buildingCode;
 
     private int deposit;
 
@@ -31,7 +31,7 @@ public class RealEstate {
     private House house;
 
     @Builder
-    public RealEstate(String numberName, String roadName, int buildingCode, int deposit, House house) {
+    public RealEstate(String numberName, String roadName, String buildingCode, int deposit, House house) {
         this.numberName = numberName;
         this.roadName = roadName;
         this.buildingCode = buildingCode;

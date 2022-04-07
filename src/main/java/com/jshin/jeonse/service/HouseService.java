@@ -1,20 +1,23 @@
 package com.jshin.jeonse.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jshin.jeonse.domain.HouseRepository;
 import com.jshin.jeonse.web.dto.HouseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @RequiredArgsConstructor
 public class HouseService {
 
     private final HouseRepository houseRepository;
+    private final HouseApi houseApi;
 
     @Transactional(rollbackFor = Exception.class)
     public void save(HouseDto houseDto) {
-       houseRepository.save(houseDto.toEntity());
+        houseRepository.save(houseDto.toEntity());
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -22,5 +25,8 @@ public class HouseService {
         houseRepository.deleteById(id);
     }
 
+    public HouseDto getHouseInfo(String pnu, String dong, String ho ) throws Exception {
+        return houseApi.requestToHouseInfo(pnu, dong, ho);
+    }
 
 }

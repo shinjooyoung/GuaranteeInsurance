@@ -5,11 +5,13 @@ import com.jshin.jeonse.domain.RealEstate;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
+@ToString
 public class RealEstateDto {
 
 
@@ -17,20 +19,25 @@ public class RealEstateDto {
 
     private String roadName;
 
-    private int buildingCode;
+    private String buildingCode;
 
     private int deposit;
+
+    private String dongNm;
+
+    private String hoNm;
 
     private House house;
 
 
     @Builder
-    public RealEstateDto(String numberName, String roadName, int buildingCode, int deposit, House house) {
+    public RealEstateDto(String numberName, String roadName, String buildingCode, int deposit, String dongNm, String hoNm) {
         this.numberName = numberName;
         this.roadName = roadName;
         this.buildingCode = buildingCode;
         this.deposit = deposit;
-        this.house = house;
+        this.dongNm = dongNm;
+        this.hoNm = hoNm;
     }
 
     public RealEstate toEntity(){
@@ -42,4 +49,10 @@ public class RealEstateDto {
                 .house(house)
                 .build();
     }
+
+    public void setHouse(House house) {
+        this.house = house;
+    }
+
+
 }
