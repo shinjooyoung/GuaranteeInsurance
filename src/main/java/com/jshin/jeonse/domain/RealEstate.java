@@ -1,6 +1,7 @@
 package com.jshin.jeonse.domain;
 
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 
 @NoArgsConstructor
 @Entity
+@Getter
 public class RealEstate {
 
 

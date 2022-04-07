@@ -1,6 +1,7 @@
 package com.jshin.jeonse.domain;
 
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +10,13 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Slf4j
+@Getter
 @NoArgsConstructor
 @Entity
 public class House {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "house")
     private Long id;
 
     private LocalDateTime lastUpdtDt;
@@ -25,6 +26,9 @@ public class House {
     private int pblntfPc;
 
     private int mortgage;
+
+    @OneToOne(mappedBy = "house")
+    private RealEstate realEstate;
 
     @Builder
     public House(LocalDateTime lastUpdtDt, String aphusSeCodeNm, int pblntfPc, int mortgage) {
