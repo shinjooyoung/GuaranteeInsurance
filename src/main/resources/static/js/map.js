@@ -19,17 +19,8 @@ window.onload = function(){
                 roadName = data.autoRoadAddress;
                 buildingCode = data.buildingCode;
 
-                document.getElementById("address_kakao").value = numberName; // 주소 넣기
-                //document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
-
-                numberName = data.address;
-                roadName = data.autoRoadAddress;
-                buildingCode = data.buildingCode;
-
-                document.getElementById("address_kakao").value = numberName; // 주소 넣기
-                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
-
-
+                document.getElementById("address").value = numberName; // 주소 넣기
+                document.querySelector("input[name=address]").focus(); //상세입력 포커싱
 
                 Promise.resolve(data).then(o => {
                     const { address } = data;
