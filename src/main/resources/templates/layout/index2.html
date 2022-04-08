@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>우편번호찾기</title>
+    <style>
+        body { margin:0; padding:0 }
+    </style>
+</head>
+<body id="postcode">
+</body>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f849877e550e24d7ec1cc83a5f32671f&libraries=services"></script>
+<script type="application/javascript">
+    new daum.Postcode({
+        oncomplete: function(data) {
+            Promise.resolve(data).then(o => {
+                const { address } = data;
+
+                return new Promise((resolve, reject) => {
+                    const geocoder = new daum.maps.services.Geocoder();
+
+                    geocoder.addressSearch(address, (result, status) =>{
+                        if(status === daum.maps.services.Status.OK){
+                            const { x, y } = result[0];
+
+                            resolve({ lat: y, lon: x })
+                        }else{
+                            reject();
+                        }
+                    });
+                })
+            }).then(result => {
+                // 위, 경도 결과 값
+            });
+        },
+        width: "100%",
+        height: window.innerHeight
+    }).embed("#postcode");
+</script>
+</html>
