@@ -10,7 +10,7 @@ window.onload = function(){
     //경도
     let longitude;
 
-    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+    document.getElementById("address_kakao").addEventListener("click", function(){
         //카카오 지도 발생
         new daum.Postcode({
             oncomplete: function(data) {
@@ -38,7 +38,7 @@ window.onload = function(){
                         });
                     })
                 }).then(result => {
-                    // 위, 경도 결과 값
+                    // 위, 경도 결과 값 추후 지도 표시
                     latitude = result.lat;
                     longitude = result.lon;
 
@@ -46,12 +46,12 @@ window.onload = function(){
                     //XMLHttpRequest 객체 생성
                     var xhr = new XMLHttpRequest();
                     //요청을 보낼 방식, 주소, 비동기여부 설정
-                    xhr.open('GET', '/realestate', true);
+                    xhr.open('GET', '/jeonse', true);
                     //요청 전송
                     xhr.send();
                     //통신후 작업
                     xhr.onload = () => {
-                        //통신 성공
+                        //통신 성공 전세가율 계산
                         if (xhr.status == 200) {
                             console.log(xhr.response);
                             console.log("통신 성공");

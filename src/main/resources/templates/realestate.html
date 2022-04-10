@@ -11,20 +11,23 @@
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <script type="text/javascript" src="/js/map.js"></script>
 
-    <title>Kakao API</title>
+    <title>부동산 사이트</title>
 </head>
 <body>
-<h1>부동산 전세가율 확인</h1>
-<label><input type="radio" name="radio" value="apt"> 아파트</label>
-<label><input type="radio" name="radio" value="villa"> 빌라</label>
-<label><input type="radio" name="radio" value="oneroom"> 원룸</label>
+<li><a href="/">주소</a></li>
+<li><a href="/realestate">부동산 사이트</a></li>
+<h1>부동산 매물별 전세가율</h1>
+* 지하철역 기준으로 해당 매물을 표시함<br>
+<label><input type="radio" name="jeonse" value="zigbang" checked> 직방</label>
+<!--<label><input type="radio" name="jeonse" value="dabang"> 다방</label>-->
+<!--<label><input type="radio" name="jeonse" value="naver"> 네이버 부동산</label>-->
 <table>
     <tr>
-        <th>주소</th>
-        <td><input type="text" id ="address" name="address" readonly></td>
-        <td><input type="button" id="address_kakao" readonly value="검색"/></td>
+        <th>지하철역 </th>
+        <td><input type="text" id ="subway" name="subway"></td>
+        <td><input type="button" id="subway_button" readonly value="검색"/></td>
     </tr>
 </table>
-* 검색한 주소 근처의 매물이 검색됨
+<br>
 </body>
 </html>

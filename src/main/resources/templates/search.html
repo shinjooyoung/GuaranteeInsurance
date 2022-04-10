@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f849877e550e24d7ec1cc83a5f32671f&libraries=services"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script type="text/javascript" src="/js/search.js"></script>
+
+    <title>전세가율</title>
+</head>
+<body>
+<li><a href="/">주소</a></li>
+<li><a href="/realestate">부동산 사이트</a></li>
+<h1>부동산 전세가율</h1>
+* 공시지가로 계산되며 전세가율 비율별로 전세값이 표시됨
+<table>
+    <tr>
+        <th>주소</th>
+        <td><input type="text" id ="address_kakao" name="address_kakao" readonly></td>
+<!--        <td><input type="button" id="address_kakao" readonly value="검색"/></td>-->
+    </tr>
+    <tr>
+        <th>상세</th>
+        <td><input type="text" id ="address" name="address" readonly></td>
+        <td><input type="button" id="address_kakao" readonly value="검색"/></td>
+    </tr>
+    <tr>
+        <th>공시지가 : </th>
+        <td>5749644 원</td>
+    </tr>
+    <tr>
+        <th>전세가율 60% : </th>
+        <td>5749644 원</td>
+    </tr>
+    <tr>
+        <th>전세가율 70% : </th>
+        <td>5749644 원</td>
+    </tr>
+    <tr>
+        <th>전세가율 80% : </th>
+        <td>5749644 원</td>
+    </tr>
+    <tr>
+        <th>전세가율 90% : </th>
+        <td>5749644 원</td>
+    </tr>
+    <tr>
+        <th>전세가율 100% : </th>
+        <td>5749644 원</td>
+    </tr>
+</table>
+<br>
+* 현재 매매가와 전세 비용으로 전세가율 계산<br>
+<table>
+    <tr>
+        <th>매매가</th>
+        <td><input type="text" id ="sale_price" name="sale_price"></td>
+        <th>전세금액</th>
+        <td><input type="text" id ="price" name="price"></td>
+        <td><input type="button" id="price_button" value="조회" readonly/></td>
+    </tr>
+</table>
+</body>
+</html>

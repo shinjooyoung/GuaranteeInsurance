@@ -29,4 +29,8 @@ public class HouseService {
         return houseApi.requestToHouseInfo(pnu, dong, ho);
     }
 
+    public int finJeonseRate(HouseDto houseDto) throws Exception {
+        return houseDto.toEntity().getAvailabilityCondition(houseDto.getPblntfPc());
+    }
+
 }

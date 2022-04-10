@@ -19,13 +19,13 @@ public class RealEstateController {
     private final RealEstateService realEstateService;
     private final HouseService houseService;
 
-    @GetMapping("/")
+    @GetMapping("/realestate")
     public String index(Model model){
-        return "index";
+        return "realestate";
     }
 
     @ResponseBody
-    @GetMapping("/realestate")
+    @GetMapping("/crawling")
     public String find(Model model){
         //TODO 크롤링으로 매물 정보 가져오는 서비스
 //        model.addAllAttributes("realestate", realEstateService.findAllDesc());
