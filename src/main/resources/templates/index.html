@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link th:href="@{/css/instagram.css}" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
+
+    <!-- DataTable -->
+    <link th:href="@{/vendor/datatables/dataTables.bootstrap4.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/facebook.js}"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=728868091761315&autoLogAppEvents=1" nonce="xiXthpeQ"></script>
+    <script th:inline="javascript">
+             /*<![CDATA[*/
+              const expire = "[[${expire}]]";
+
+
+              /*]]>*/
+
+            if(expire=='true') {
+                alert("Please connect again.");
+            }
+
+    </script>
+</head>
+<body>
+<div class="login-box">
+    <h1>MD-CLOUD</h1>
+        <spanp th:each="url : ${urls}">
+            <a th:if="${url.key} == 'facebook'" onclick="login('facebook')" style="cursor:pointer;"><img th:src="|@{/img/socialmedia/}${url.key}.png|" width="50px" height="50px;"> </a>
+<!--            <a th:if="${url.key} == 'facebook'" th:href="@{/facebook/profile}"><img th:src="|@{/img/socialmedia/}${url.key}.png|" width="50px" height="50px;"> </a>-->
+<!--            <a th:if="${url.key} == 'facebook'" href="/facebook" style="cursor:pointer;"><img th:src="|@{/img/socialmedia/}${url.key}.png|" width="50px" height="50px;"> </a>-->
+            <a th:unless="${url.key} == 'facebook'" th:href="${url.value}"><img th:src="|@{/img/socialmedia/}${url.key}.png|" width="50px" height="50px;"> </a>
+        </spanp>
+<!--    <button class="btn btn-light btn-icon-split">Logout</button>-->
+</div>
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="text-center">
+            <spanp><a th:href="@{/terms-of-uses}">Terms of Uses</a> | </spanp><spanp><a th:href="@{/privacy-policy}">Privacy Policy</a> | </spanp><spanp><a th:href="@{/data-retention-policy}">Data Retention Policy</a></spanp>
+        </div>
+        <div class="text-center">
+            <span><h7>N-215, 235 Pangyoyeok-ro, Bundang-gu,</h7></span><br>
+            <span><h7>Seongnam-si, Gyeonggi-do, 13494, Republic of Korea</h7></span>
+        </div>
+        <div class="copyright text-center my-auto">
+            <br><span>COPYRIGHTS © HANCOM WITH INC. ALL RIGHTS RESERVED.</span>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

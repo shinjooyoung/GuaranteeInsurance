@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+
+<th:block layout:fragment="content">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">profile</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="accountInfo" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>email</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td th:text="${user.id}">id</td>
+                            <td th:text="${user.name}">name</td>
+                            <td th:text="${user.email}">email</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>
